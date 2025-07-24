@@ -32,15 +32,17 @@ class App extends Component {
     this.state = initialState;
   }
 
-  loadUser = (data) => {
-    this.setState({user: {
+loadUser = (data) => {
+  this.setState({
+    user: {
       id: data.id,
       name: data.name,
       email: data.email,
-      entries: data.entries,
+      entries: data.entries || 0,
       joined: data.joined
-    }})
-  }
+    }
+  });
+}
 
 calculateFaceLocation = (data) => {
   try {
