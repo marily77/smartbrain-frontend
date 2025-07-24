@@ -93,8 +93,8 @@ onButtonSubmit = () => {
         console.warn('⚠️ No face box to display.');
       }
 
-      // Update entry count
-      return fetch('https://smartbrain-backend-yfjl.onrender.com/imageurl', {
+      // ✅ FIX: update entries count using the correct endpoint
+      return fetch('https://smartbrain-backend-yfjl.onrender.com/image', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: this.state.user.id })
@@ -105,7 +105,8 @@ onButtonSubmit = () => {
       this.setState(Object.assign(this.state.user, { entries: count }));
     })
     .catch(err => console.error('No face detected or invalid response', err));
-}
+};
+
 
 
 
