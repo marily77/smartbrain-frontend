@@ -79,7 +79,7 @@ calculateFaceLocation = (data) => {
 onButtonSubmit = () => {
   this.setState({ imageUrl: this.state.input });
 
-  fetch('http://localhost:3000/imageurl', {
+  fetch('https://smartbrain-backend-yfjl.onrender.com/imageurl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ input: this.state.input })
@@ -94,7 +94,7 @@ onButtonSubmit = () => {
       }
 
       // Update entry count
-      return fetch('http://localhost:3000/image', {
+      return fetch('https://smartbrain-backend-yfjl.onrender.com/imageurl', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: this.state.user.id })
